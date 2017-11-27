@@ -5,23 +5,10 @@ namespace Classes\Webforce3\DB;
 use Classes\Webforce3\Config\Config;
 use Classes\Webforce3\Exceptions\InvalidSqlQueryException;
 
-class Student extends DbObject {
-	/** @var Session */
-	protected $session;
-	/** @var City */
-	protected $city;
-	/** @var string */
-	protected $lname;
-	/** @var string */
-	protected $fname;
-	/** @var string */
-	protected $email;
-	/** @var string */
-	protected $birthdate;
-	/** @var int */
-	protected $friendliness;
+class Location extends DbObject {
+	protected $name;
 
-	public function __construct($id=0, $session=null, $city=null, $lname='', $fname='', $email='', $birthdate='', $friendliness=0, $inserted='') {
+	public function __construct($id=0, $name='', $inserted='') {
 		if (empty($session)) {
 			$this->session = new Session();
 		}

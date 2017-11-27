@@ -3,7 +3,7 @@
 // Autoload PSR-4
 spl_autoload_register();
 
-// Imports 
+// Imports
 use \Classes\Webforce3\Config\Config;
 use \Classes\Webforce3\DB\City;
 use \Classes\Webforce3\DB\Country;
@@ -46,14 +46,14 @@ if(!empty($_POST)) {
     if (empty($cityName)) {
 		$conf->addError('Veuillez renseigner le nom');
 	}
-    
+
     // je remplis l'objet qui est lu pour les inputs du formulaire, ou pour l'ajout en DB
 	$cityObject = new City(
 		$cityId,
 		new Country($countryId),
 		$cityName
 	);
-    
+
     // Si tout est ok => en DB
 	if (!$conf->haveError()) {
 		if ($cityObject->saveDB()) {
@@ -71,7 +71,7 @@ $selectCities = new SelectHelper($citiesList, $cityId, array(
 	'id' => 'cit_id',
 	'class' => 'form-control',
 ));
-
+print_r($cityObject);
 $selectCountries = new SelectHelper($countriesList, $cityObject->getCountry()->getId(), array(
 	'name' => 'cou_id',
 	'id' => 'cou_id',

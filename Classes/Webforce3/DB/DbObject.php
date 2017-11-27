@@ -22,7 +22,7 @@ abstract class DbObject {
 
 	/**
      * Retourne un objet correspondant à l'ID en DB
-     * 
+     *
 	 * @param int $id
 	 * @return DbObject
 	 * @throws InvalidSqlQueryException
@@ -32,7 +32,7 @@ abstract class DbObject {
 	/**
      * Renvoie un tableau correspondant à toutes les lignes de tables
      * sous forme d'objet (1 objet par ligne)
-     * 
+     *
 	 * @return DbObject[]
 	 * @throws InvalidSqlQueryException
 	 */
@@ -42,7 +42,7 @@ abstract class DbObject {
      * Renvoie un tableau associatif à une dimension
      * En index l'ID dans la table
      * En value, une string représentative
-     * 
+     *
 	 * @return array
 	 * @throws InvalidSqlQueryException
 	 */
@@ -50,7 +50,7 @@ abstract class DbObject {
 
 	/**
      * Effectue la sauvegarde dans la DB de l'instance courante
-     * 
+     *
 	 * @return bool
 	 * @throws InvalidSqlQueryException
 	 */
@@ -58,7 +58,7 @@ abstract class DbObject {
 
 	/**
      * Permet de supprimer la ligne correspondant à l'id, dans la table
-     * 
+     *
 	 * @param int $id
 	 * @return bool
 	 * @throws InvalidSqlQueryException
